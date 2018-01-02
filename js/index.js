@@ -26,9 +26,10 @@ console.log(bannerzuo);
  });
     var p=0;
    function fn(bir="r") {
-           if(bir="r"){
+           if(bir==="r"){
                p++;
-           }else if(bir="l"){
+               console.log("p");
+           }else if(bir==="l"){
                p--;
            }
            if(p === banners.length){
@@ -37,7 +38,7 @@ console.log(bannerzuo);
            if(p === -1){
                p=banners.length-1;
            }
-           p++;
+           console.log(p);
        if (p === banners.length){
            p=0;
        }
@@ -48,7 +49,7 @@ console.log(bannerzuo);
        banners[p].classList.add("active");
        pagers[p].classList.add("active");
    }
-   var b=setTimeout(fn,1000);
+   var b=setInterval(fn,1000);
     br.onmouseover=function(){
         clearInterval(b);
     }
@@ -124,6 +125,8 @@ function www(wsq) {
     let mokuai=wsq.querySelectorAll(".mokuai");
     let yuan=wsq.querySelectorAll(".yidian");
     let mokuais=mokuai.length;
+    console.clear();
+    console.log(yuan.length);
     console.log(big)
     let n=0;
     right.onclick=function () {
@@ -136,7 +139,7 @@ function www(wsq) {
         for(let i = 0; i < yuan.length; i++) {
             yuan[i].classList.remove("active")
         }
-        yuan[n].classList.add("active")
+        yuan[3*n+n].classList.add("active")
     };
     left.onclick=function () {
         n--;
@@ -168,14 +171,14 @@ function www(wsq) {
     console.log(ywz);
     console.log(tu);
     ywz.forEach(function(ele,index){
-        ele.onclick=function(){
-            for(let i=0;i<ywz.length;i++){
-                ywz[i].classList.remove("active");
-                tu[i].classList.remove("active");
-            }
-            this.classList.add("active");
-            tu[index].classList.add("active");
+    ele.onclick=function(){
+        for(let i=0;i<ywz.length;i++){
+            ywz[i].classList.remove("active");
+            tu[i].classList.remove("active");
         }
-    })
+        this.classList.add("active");
+        tu[index].classList.add("active");
+    }
+})
 }
 
