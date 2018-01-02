@@ -304,6 +304,10 @@ transform:translateY(-4px);
 	margin-left: 30px;
 	margin-top: 20px;
    }
+ .active{
+    color: #FF6700;
+    border-bottom: 2px solid red;
+}
   .youwen1{
   	/* color: red; */
   	
@@ -865,7 +869,7 @@ color: #333333;
 	background: #7385af;
 }
 .yuan .active{
-	background: #7385af;
+	background: red;
 }
 /* .zuokuang{
 	width: 41px;
@@ -916,11 +920,12 @@ color: #333333;
 	background: rgba(0, 0, 0, 0.6);
 }
 .act{
-	font-weight: bold;
+
 	 cursor: pointer;
 }
  .act:hover{
 	color: red;
+     font-weight: bold;
 }
 
 @font-face {
@@ -959,14 +964,45 @@ color: #333333;
 	height: 419px;
    /*  background: blue; */
 }
+.xiaozhengti{
+    width: 100%;
+    height: 629px;
+    overflow: hidden;
+
+}
+.zhengyi{
+    width: 100%;
+    height: 629px;
+    display: none;
+}
+.xiaozhengti .active{
+    display: block;
+}
+.baohan{
+	width:297px;
+	height:419px;
+	background: red;
+	position: relative;
+	overflow: hidden;
+	float: left;
+	margin-right: 10px;
+}
+.baohan:last-child{
+	margin-right: 0;
+}
+.zuida{
+	width:2000px;
+	height:100%;
+}
 .mokuai{
 	float: left;
-	width: 296px;
+	width: 300px;
 	height: 419px;
 	background: white;
 	border-top: 1px solid #feac16;
-	margin-right: 14px;
+	/*margin-right: 14px;*/
 	transition: 0.7s;
+
 }
 .mokuai:hover{
 	box-shadow: 0px 4px 9px 4px rgba(0, 0, 0, 0.4)
@@ -995,8 +1031,12 @@ color: #333333;
 	color: #f7b334;
 	text-align: center;
 	line-height: 69px;
-}
 
+}
+.dian .active{
+	border: 2px solid red;
+	background: pink;
+}
 .zier{
 	width: 296px;
 	height: 20px;
@@ -1008,6 +1048,8 @@ color: #333333;
 	height: 63px;
 	/* background: yellowgreen; */
 }
+
+
 .zisi{
 	width: 200px;
 	height: 40px;
@@ -1048,22 +1090,42 @@ text-align: center;
 }
 .yidian{
     display: block;
-	margin-right: 26px;
+	margin-right: 18px;
 	float: left;
 	width: 6px;
 	height: 6px;
 	background: #b4b4b4;
 	border-radius: 50%;
 		margin-top: 2px;
+	border: 2px solid transparent;
 }
 .yidian:hover{
-	border: 2px solid #ff6709;
-	background: white;
+	border: 2px solid red;
+	background: pink;
 }
 .dian .yidian:last-child{
 	margin-right: 0px;
 
 }
+.youbian,.zuobian{
+	width:30px;
+	height:50px;
+	background: pink;
+	font-size: 40px;
+	color: black;
+	position: absolute;
+	top:180px;
+	text-align: center;
+	line-height: 50px;
+	cursor: pointer;
+}
+.youbian{
+	right: 0;
+}
+.zuobian{
+	left:0;
+}
+
 /* .dian2{
 	margin-right: 0px;
 } */

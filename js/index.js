@@ -48,12 +48,12 @@ console.log(bannerzuo);
        banners[p].classList.add("active");
        pagers[p].classList.add("active");
    }
-   var b=setTimeout(fn,2000);
+   var b=setTimeout(fn,1000);
     br.onmouseover=function(){
         clearInterval(b);
     }
     br.onmouseout=function () {
-        b=setInterval(fn,2000);
+        b=setInterval(fn,1000);
     };
     var flag=true;
     //左右点击事件
@@ -96,10 +96,10 @@ console.log(bannerzuo);
     let m=0;
     function starfn(){
         if (m%2===0){
-            nei.style.transform="translateX(-1240px)"
+            nei.style.transform="translateX(-1240px)";
             m++;
         }else{
-            nei.style.transform="translateX(0)"
+            nei.style.transform="translateX(0)";
             m++;
         }
     }
@@ -112,3 +112,70 @@ console.log(bannerzuo);
     }
 
 }
+//内容
+let zx=document.querySelectorAll(".baohan");
+zx.forEach(function (ele) {
+    www(ele)
+});
+function www(wsq) {
+    let big=wsq.querySelector(".zuida");
+    let right=wsq.querySelector(".youbian");
+    let left=wsq.querySelector(".zuobian");
+    let mokuai=wsq.querySelectorAll(".mokuai");
+    let yuan=wsq.querySelectorAll(".yidian");
+    let mokuais=mokuai.length;
+    console.log(big)
+    let n=0;
+    right.onclick=function () {
+        n++;
+        if(n>=mokuais){
+            n=mokuais-1;
+            return
+        }
+        big.style.marginLeft = -n * 300 + "px"
+        for(let i = 0; i < yuan.length; i++) {
+            yuan[i].classList.remove("active")
+        }
+        yuan[n].classList.add("active")
+    };
+    left.onclick=function () {
+        n--;
+        if(n<0){
+            n=0;
+            return
+        }
+        big.style.marginLeft = -n * 300 + "px"
+        for(let i = 0; i < yuan.length; i++) {
+            yuan[i].classList.remove("active")
+        }
+        yuan[n].classList.add("active")
+    };
+    yuan.forEach(function (ele,index) {
+        let m=index;
+        ele.onclick=function () {
+            for(let i=0;i<yuan.length;i++){
+                yuan[i].classList.remove("active")
+            }
+            ele.classList.add("active");
+            big.style.marginLeft=-m*300+"px";
+            n=index;
+        }
+    })
+}
+{
+    let ywz=document.querySelectorAll(".youwen");
+    let tu=document.querySelectorAll(".zhengyi");
+    console.log(ywz);
+    console.log(tu);
+    ywz.forEach(function(ele,index){
+        ele.onclick=function(){
+            for(let i=0;i<ywz.length;i++){
+                ywz[i].classList.remove("active");
+                tu[i].classList.remove("active");
+            }
+            this.classList.add("active");
+            tu[index].classList.add("active");
+        }
+    })
+}
+
